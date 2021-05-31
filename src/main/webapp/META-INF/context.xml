@@ -1,0 +1,13 @@
+<Context>
+	<Resource
+		name="jdbc/MySQLDB"
+		auth="Container"
+		type="javax.sql.DataSource"
+		username="admin"
+		password="privacyJSP"
+		driverClassName="com.mysql.jdbc.Driver"
+		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+		url="jdbc:mysql://privacy.cv8yn1l1bh6f.ap-northeast-2.rds.amazonaws.com:3306/privacy"
+		maxActive="500"
+	/>
+</Context>

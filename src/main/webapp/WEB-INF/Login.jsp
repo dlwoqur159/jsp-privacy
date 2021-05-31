@@ -69,7 +69,7 @@ table{
 <body>
 <section>
 <table class="loginbox" align = "center">
-<form name="loginform" action="loginProcess.jsp">
+<form name="loginform" action="loginProcess.jsp" method="POST">
      <title>Login</title>
 	 <tr>
 	<td class="title_div">
@@ -95,7 +95,7 @@ table{
 		<a href="javascript:loginform.submit()" class= "td">로그인</a>
 		</Button>	
 				<Button class="button">
-		<a href="joinForm.jsp" class= "td">회원가입</a>
+		<a href="Join.do" class= "td">회원가입</a>
 		</Button>
 			</td>
 
