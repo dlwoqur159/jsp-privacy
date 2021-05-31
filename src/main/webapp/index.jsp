@@ -8,7 +8,7 @@
 </head>
 <body>
 <div>
-	<a href="login.name">명함 관리 시스템</a><br>
+	<a href="Login.do">명함 관리 시스템</a><br>
 	<span>
 		<a>제작자</a>
 		<a>재벽</a>

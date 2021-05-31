@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import java.io.IOException;
 
@@ -36,7 +36,9 @@ public class PrivacyController extends HttpServlet {
 		if(command.equals("/Login.do")){
 			forward=new ActionForward();
 			forward.setPath("/Login.jsp");
+			System.out.println(1);
 		}
+		
 		if(forward != null){
 			
 			if(forward.isRedirect()){
@@ -47,7 +49,7 @@ public class PrivacyController extends HttpServlet {
 				dispatcher.forward(req, resp);
 			}
 			
-		
+			System.out.println(2);
 		}
 	}
 }
