@@ -68,8 +68,20 @@ table{
 </head>
 <body>
 <section>
+<div>
+	<form name="loginform" action="ActionLogin.do" method="POST">
+		<div>
+			 <input id="txtId" class="txtbox-simple" placeholder="아이디" />
+		     <input id="txtPw" class="txtbox-simple" placeholder="비밀번호" type="password" />
+		</div>
+		<input type="submit" class= "td" value="로그인"/>
+	</form>
+		<a href="Join.do" class= "td"><input type="button" value="회원가입"/></a>
+</div>
+
+<!-- 
 <table class="loginbox" align = "center">
-<form name="loginform" action="loginProcess.jsp" method="POST">
+
      <title>Login</title>
 	 <tr>
 	<td class="title_div">
@@ -92,7 +104,7 @@ table{
 	<tr>
 	<td >
 		<Button class="button" >
-		<a href="javascript:loginform.submit()" class= "td">로그인</a>
+		<input type="submit" class= "td" value="로그인"/>
 		</Button>	
 				<Button class="button">
 		<a href="Join.do" class= "td">회원가입</a>
@@ -103,6 +115,7 @@ table{
 
 	</form>
 </table>
+ -->
 </section>
 </body>
 </html>

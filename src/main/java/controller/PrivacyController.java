@@ -36,7 +36,11 @@ public class PrivacyController extends HttpServlet {
 		if(command.equals("/Login.do")){
 			forward=new ActionForward();
 			forward.setPath("/WEB-INF/Login.jsp");
+		}else if(command.equals("/Join.do")){
+			forward=new ActionForward();
+			forward.setPath("/WEB-INF/Join.jsp");
 		}
+		
 		
 		if(forward != null){
 			
