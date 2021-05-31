@@ -33,8 +33,22 @@ public class PrivacyController extends HttpServlet {
 		Action action=null;
 		
 		
-		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/index.jsp");
-		rd.forward(req, resp);
+		if(command.equals("/Login.do")){
+			forward=new ActionForward();
+			forward.setPath("/Login.jsp");
+		}
+		if(forward != null){
+			
+			if(forward.isRedirect()){
+				resp.sendRedirect(forward.getPath());
+			}else{
+				RequestDispatcher dispatcher=
+						req.getRequestDispatcher(forward.getPath());
+				dispatcher.forward(req, resp);
+			}
+			
+		
+		}
 	}
-
 }
+
