@@ -35,8 +35,7 @@ public class PrivacyController extends HttpServlet {
 		
 		if(command.equals("/Login.do")){
 			forward=new ActionForward();
-			forward.setPath("/Login.jsp");
-			System.out.println(1);
+			forward.setPath("/WEB-INF/Login.jsp");
 		}
 		
 		if(forward != null){
@@ -49,7 +48,6 @@ public class PrivacyController extends HttpServlet {
 				dispatcher.forward(req, resp);
 			}
 			
-			System.out.println(2);
 		}
 	}
 }
