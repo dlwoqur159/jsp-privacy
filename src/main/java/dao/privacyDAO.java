@@ -16,7 +16,7 @@ public class privacyDAO {
 	private static privacyDAO privacyDAO;
 
 
-	private privacyDAO() {
+	public privacyDAO() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -27,7 +27,7 @@ public class privacyDAO {
 		return privacyDAO;
 	}
 	
-	//±ÛÀÇ °³¼ö ±¸ÇÏ±â.
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½.
 		public int selectListCount() {
 
 			int listCount= 0;
@@ -45,7 +45,7 @@ public class privacyDAO {
 					listCount=rs.getInt(1);
 				}
 			}catch(Exception ex){
-				System.out.println("getListCount ¿¡·¯: " + ex);			
+				System.out.println("getListCount ï¿½ï¿½ï¿½ï¿½: " + ex);			
 			}finally{
 				close(rs);
 				close(pstmt);

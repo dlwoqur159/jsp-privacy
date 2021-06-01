@@ -9,7 +9,7 @@ public class PrivacyDTO {
 	private String PRIVACY_TEL;
 	private String PRIVACY_Company_Name;
 	private String PRIVACY_RANK;
-	private Date PRIVACY_BRITH;
+	private Date PRIVACY_BIRTH;
 	private Date PRIVACY_DATE;
 	
 	public int getPRIVACY_NUM() {
@@ -36,6 +36,14 @@ public class PrivacyDTO {
 		this.PRIVACY_PW = PRIVACY_PW;
 	}
 	
+	public String getPRIVACY_NAME() {
+		return PRIVACY_NAME;
+	}
+	
+	public void setPRIVACY_NAME(String PRIVACY_NAME) {
+		this.PRIVACY_NAME = PRIVACY_NAME;
+	}
+	
 	public String getPRIVACY_TEL() {
 		return PRIVACY_TEL;
 	}
@@ -54,16 +62,16 @@ public class PrivacyDTO {
 	public String getPRIVACY_RANK() {
 		return PRIVACY_RANK;
 	}
-	public void setPRIVACY_FILE(String PRIVACY_rank) {
-		this.PRIVACY_RANK = PRIVACY_rank;
+	public void setPRIVACY_RANK(String PRIVACY_RANK) {
+		this.PRIVACY_RANK = PRIVACY_RANK;
 	}
 	
-	public Date getPRIVACY_BRITH() {
-		return PRIVACY_BRITH;
+	public Date getPRIVACY_BIRTH() {
+		return PRIVACY_BIRTH;
 	}
 	
-	public void setPRIVACY_BRITH(Date PRIVACY_BRITH) {
-		this.PRIVACY_BRITH = PRIVACY_BRITH;
+	public void setPRIVACY_BRIRH(Date PRIVACY_BIRTH) {
+		this.PRIVACY_BIRTH = PRIVACY_BIRTH;
 	}
 	
 	
