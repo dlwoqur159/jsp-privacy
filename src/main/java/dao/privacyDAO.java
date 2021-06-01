@@ -8,17 +8,50 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
 import dto.PrivacyDTO;
+import javax.naming.Context;
+import javax.naming.InitialContext;
 
 public class privacyDAO {
 
 	DataSource ds;
-	Connection con;
+	PreparedStatement pstmt=null;
+	Connection con = null;
+	ResultSet rs = null;
 	private static privacyDAO privacyDAO;
 
-
+	//DB 연동?
 	private privacyDAO() {
-		// TODO Auto-generated constructor stub
+		try {
+			Context initCtx = new InitialContext();
+			Context envCtx = (Context)initCtx.lookup("java:comp/nev");
+			ds=(DataSource)envCtx.lookup("jdbc/MySQLDB");
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
 	}
+	
+	//회원가입 기능
+	private boolean insertPrivacy(PrivacyDTO dto) throws SQLException{
+		String sql = null;
+		
+		try {
+			con = ds.getConnection();
+			sql = "insert into privacy values " + "(?,?,?,?,?,?,?,?,?,?)"; //10개
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, dto.getPRIVACY_ID());
+					
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			if(pstmt != null) {pstmt.close();}
+			if(con != null) {con.close();}
+		}
+		
+		return false;
+	}
+	
+	
 	
 	public static privacyDAO getInstance(){
 		if(privacyDAO == null){

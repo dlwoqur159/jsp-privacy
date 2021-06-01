@@ -11,6 +11,7 @@ public class PrivacyDTO {
 	private String PRIVACY_RANK;
 	private Date PRIVACY_BRITH;
 	private Date PRIVACY_DATE;
+	private int PRIVACY_ADMIN;
 	
 	public int getPRIVACY_NUM() {
 		return PRIVACY_NUM;
@@ -75,4 +76,11 @@ public class PrivacyDTO {
 		PRIVACY_DATE = PRIVACY_date;
 	}
 	
+	public int PRIVACY_ADMIN() {
+		return PRIVACY_ADMIN;
+	}
+	
+	public void PRIVACY_ADMIN(int PRIVACY_admin) {
+		PRIVACY_ADMIN = PRIVACY_admin;
+	}
 }
