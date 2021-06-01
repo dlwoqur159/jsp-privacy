@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import vo.ActionForward;
 import action.Action;
 import action.ActionLogin;
+import action.ActionJoin;
+import action.ActionIDCheck;
 
 @WebServlet("*.do")
 public class PrivacyController extends HttpServlet {
@@ -50,13 +52,13 @@ public class PrivacyController extends HttpServlet {
 		}else if(command.equals("/Choice.do")){
 			forward=new ActionForward();
 			forward.setPath("/WEB-INF/Choice.jsp");
-		}
-			/*action = new ActionChoice();
+		}else if(command.equals("/IDCheck.do")){
+			action = new ActionIDCheck();
 			try {
 				forward=action.execute(req, resp );
 			} catch (Exception e) {
 				e.printStackTrace();
-			}*/
+			}
 		
 		
 		if(forward != null){
