@@ -15,7 +15,11 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Privacy</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>/Login.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Privacy</servlet-name>
+		<url-pattern>/Join.do</url-pattern>
 	</servlet-mapping>
 	
 	<resource-ref>

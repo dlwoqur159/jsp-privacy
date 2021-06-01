@@ -38,6 +38,7 @@ public class PrivacyDTO {
 		this.PRIVACY_PW = PRIVACY_PW;
 	}
 	
+	
 	public String getPRIVACY_TEL() {
 		return PRIVACY_TEL;
 	}
@@ -63,8 +64,8 @@ public class PrivacyDTO {
 	public String getPRIVACY_RANK() {
 		return PRIVACY_RANK;
 	}
-	public void setPRIVACY_FILE(String PRIVACY_rank) {
-		this.PRIVACY_RANK = PRIVACY_rank;
+	public void setPRIVACY_RANK(String PRIVACY_RANK) {
+		this.PRIVACY_RANK = PRIVACY_RANK;
 	}
 	
 	public Date getPRIVACY_BIRTH() {
@@ -74,7 +75,6 @@ public class PrivacyDTO {
 	public void setPRIVACY_BIRTH(Date PRIVACY_birth) {
 		this.PRIVACY_BIRTH = PRIVACY_birth;
 	}
-	
 	
 	public Timestamp getPRIVACY_DATE() {
 		return PRIVACY_DATE;
