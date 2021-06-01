@@ -21,6 +21,10 @@
 		<servlet-name>Privacy</servlet-name>
 		<url-pattern>/Join.do</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Privacy</servlet-name>
+		<url-pattern>/Choice.do</url-pattern>
+	</servlet-mapping>
 	
 	<resource-ref>
 		<description>Connection</description>

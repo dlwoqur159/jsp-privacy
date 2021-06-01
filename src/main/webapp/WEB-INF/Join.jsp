@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <html>
 <head>
-<title>회원관리</title>
+<title>회원가입</title>
 <style>
 .td{
 	color:white;
@@ -12,7 +12,6 @@
 		border : 1px solid gray;
 		 border-radius: 5%;
 		text-align: center;
-			margin-top:250px;
 	}
 	.td_title{
 		font-weight: bold;

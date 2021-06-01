@@ -47,7 +47,16 @@ public class PrivacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(command.equals("/Choice.do")){
+			forward=new ActionForward();
+			forward.setPath("/WEB-INF/Choice.jsp");
 		}
+			/*action = new ActionChoice();
+			try {
+				forward=action.execute(req, resp );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}*/
 		
 		
 		if(forward != null){
