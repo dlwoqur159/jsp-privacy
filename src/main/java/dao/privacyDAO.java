@@ -19,7 +19,7 @@ public class privacyDAO {
 	ResultSet rs = null;
 	private static privacyDAO privacyDAO;
 
-	//DB ¿¬µ¿?
+	//DB ï¿½ï¿½ï¿½ï¿½?
 	public privacyDAO() {
 		try {
 			Context initCtx = new InitialContext();
@@ -30,13 +30,13 @@ public class privacyDAO {
 		}
 	}
 	
-	//È¸¿ø°¡ÀÔ ±â´É
+	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	private boolean insertPrivacy(PrivacyDTO dto) throws SQLException{
 		String sql = null;
 		
 		try {
 			con = ds.getConnection();
-			sql = "insert into privacy values " + "(?,?,?,?,?,?,?,?,?,?)"; //10°³
+			sql = "insert into privacy values " + "(?,?,?,?,?,?,?,?,?,?)"; //10ï¿½ï¿½
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, dto.getPRIVACY_NUM());
@@ -61,7 +61,7 @@ public class privacyDAO {
 
 	}
 	
-	//·Î±×ÀÎ ±â´É
+	//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	public int userCheck(String id, String pw) throws SQLException{
 		String sql = null;
 		int x=-1;
@@ -94,39 +94,49 @@ public class privacyDAO {
 		return -1;
 	}
 	
+	public int confirmld(String id) throws SQLException{
+		String sql=null;
+		int x = -1;
+		
+		try {
+			con = ds.getConnection();
+			sql = "select PRIVACY_ID from privacy where PRIVACY_ID=?";
+			
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1,  id);;
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				x=1;
+			}else {
+				x=-1;
+			}
+			
+			return x;
+		}catch(Exception e){
+			
+			e.printStackTrace();
+			
+		}finally {
+			if(pstmt != null) {pstmt.close();}
+			if(rs != null){rs.close();}
+			if(con != null) {con.close();}
+			}
+		return -1;
+	}
 	
+	
+		
+		
+		
+		
+	
+	/*
 	public static privacyDAO getInstance(){
 		if(privacyDAO == null){
 			privacyDAO = new privacyDAO();
 		}
 		return privacyDAO;
-	}
+	}*/
 	
-	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½.
-		public int selectListCount() {
-
-			int listCount= 0;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-
-			try{
-
-
-				System.out.println("getConnection");
-				pstmt=con.prepareStatement("select count(*) from privacy");
-				rs = pstmt.executeQuery();
-
-				if(rs.next()){
-					listCount=rs.getInt(1);
-				}
-			}catch(Exception ex){
-				System.out.println("getListCount ï¿½ï¿½ï¿½ï¿½: " + ex);			
-			}finally{
-				close(rs);
-				close(pstmt);
-			}
-
-			return listCount;
-
-		}
 }
