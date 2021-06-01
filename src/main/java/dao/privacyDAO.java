@@ -42,10 +42,13 @@ public class privacyDAO {
 			pstmt.setInt(1, dto.getPRIVACY_NUM());
 			pstmt.setString(2, dto.getPRIVACY_ID());
 			pstmt.setString(3, dto.getPRIVACY_PW());
-			pstmt.setString(4, dto.getPRIVACY_Name());
+			pstmt.setString(4, dto.getPRIVACY_NAME());
 			pstmt.setString(5, dto.getPRIVACY_TEL());
-			pstmt.setString(6, dto.getPRIVACY_PW());
-			pstmt.setString(7, dto.getPRIVACY_PW());
+			pstmt.setString(6, dto.getPRIVACY_Company_Name());
+			pstmt.setString(7, dto.getPRIVACY_RANK());
+			pstmt.setDate(8, dto.getPRIVACY_BIRTH());
+			pstmt.setTimestamp(9, dto.getPRIVACY_DATE());
+			pstmt.setInt(10, dto.PRIVACY_ADMIN());
 					
 		}catch(Exception ex) {
 			ex.printStackTrace();
@@ -57,6 +60,38 @@ public class privacyDAO {
 		return false;
 	}
 	
+	//로그인 기능
+	public int userCheck(String id, String pw) throws SQLException{
+		String sql = null;
+		int x=-1;
+		
+		try {
+			con=ds.getConnection();
+			sql = "select PRIVACY_PW from privacy where PRIVACY_PW = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			if(rs.next()) {
+				String privacypw=rs.getString("PRIVACY_PW");
+				if(privacypw.equals(pw)) {
+					x=1;
+				}else {
+					x=0;
+				}
+			}else {
+				x=-1;
+			}
+			return x;
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			if(pstmt != null) {pstmt.close();}
+			if(rs != null) {rs.close();}
+			if(con != null) {con.close();}
+		}
+		
+		
+		return -1;
+	}
 	
 	
 	public static privacyDAO getInstance(){

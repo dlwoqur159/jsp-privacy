@@ -1,5 +1,6 @@
 package dto;
 import java.sql.Date;
+import java.sql.Timestamp;
 public class PrivacyDTO {
 
 	private int PRIVACY_NUM;
@@ -10,7 +11,7 @@ public class PrivacyDTO {
 	private String PRIVACY_Company_Name;
 	private String PRIVACY_RANK;
 	private Date PRIVACY_BIRTH;
-	private Date PRIVACY_DATE;
+	private Timestamp PRIVACY_DATE;
 	private int PRIVACY_ADMIN;
 	
 	public int getPRIVACY_NUM() {
@@ -75,11 +76,11 @@ public class PrivacyDTO {
 	}
 	
 	
-	public Date getPRIVACY_DATE() {
+	public Timestamp getPRIVACY_DATE() {
 		return PRIVACY_DATE;
 	}
 	
-	public void setPRIVACY_DATE(Date PRIVACY_date) {
+	public void setPRIVACY_DATE(Timestamp PRIVACY_date) {
 		PRIVACY_DATE = PRIVACY_date;
 	}
 	
