@@ -39,7 +39,13 @@ public class privacyDAO {
 			sql = "insert into privacy values " + "(?,?,?,?,?,?,?,?,?,?)"; //10°³
 			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, dto.getPRIVACY_ID());
+			pstmt.setInt(1, dto.getPRIVACY_NUM());
+			pstmt.setString(2, dto.getPRIVACY_ID());
+			pstmt.setString(3, dto.getPRIVACY_PW());
+			pstmt.setString(4, dto.getPRIVACY_Name());
+			pstmt.setString(5, dto.getPRIVACY_TEL());
+			pstmt.setString(6, dto.getPRIVACY_PW());
+			pstmt.setString(7, dto.getPRIVACY_PW());
 					
 		}catch(Exception ex) {
 			ex.printStackTrace();
