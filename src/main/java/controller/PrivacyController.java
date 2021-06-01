@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import vo.ActionForward;
 import action.Action;
+import action.ActionLogin;
 
 @WebServlet("*.do")
 public class PrivacyController extends HttpServlet {
@@ -39,6 +40,13 @@ public class PrivacyController extends HttpServlet {
 		}else if(command.equals("/Join.do")){
 			forward=new ActionForward();
 			forward.setPath("/WEB-INF/Join.jsp");
+		}else if(command.equals("/ActionLogin.do")){
+			action = new ActionLogin();
+			try {
+				forward=action.execute(req, resp );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		
