@@ -19,7 +19,7 @@ public class ActionIDCheck implements Action{
 			      request.setAttribute("check", check);
 
 			      forward.setRedirect(false);
-			      forward.setPath("./member/member_idchk.jsp");
+			      forward.setPath("/WEB-INF/member/member_idchk.jsp");
 
 			      return forward;
 			  }

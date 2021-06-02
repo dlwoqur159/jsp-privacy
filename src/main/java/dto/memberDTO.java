@@ -7,7 +7,7 @@ public class memberDTO {
 	private String MEMBER_PW; // 비밀번호
 	private String MEMBER_ADD; // 주소
 	private String MEMBER_TEL; // 전화번호
-	private int MEMBER_AGE; // 직급
+	private String MEMBER_AGE; // 직급
 	
 	public String getMEMBER_ID() {
 		return MEMBER_ID;
@@ -41,11 +41,11 @@ public class memberDTO {
 		MEMBER_TEL = MEMBER_tel;
 	}
 	
-	public int getMEMBER_AGE() {
+	public String getMEMBER_AGE() {
 		return MEMBER_AGE;
 	}
 	
-	public void setMEMBER_TEL(int MEMBER_age) {
+	public void setMEMBER_AGE(String MEMBER_age) {
 		MEMBER_AGE = MEMBER_age;
 	}
 

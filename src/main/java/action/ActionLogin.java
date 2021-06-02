@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.privacyDAO;
-import dto.PrivacyDTO;
+import dto.memberDTO;
 import vo.ActionForward;
 
 public class ActionLogin implements Action {
@@ -19,22 +19,15 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
       privacyDAO pdao = new privacyDAO();
       ActionForward forward = new ActionForward();
       
-      String id = req.getParameter("PRIVACY_ID");
-      String pw = req.getParameter("PRIVACY_PW");
+      String id = req.getParameter("MEMBER_ID");
+      String pw = req.getParameter("MEMBER_PW");
       
       int check = pdao.userCheck(id,pw);
       if(check ==1) {
          session.setAttribute("id", id);
-         
-         if(pdao.isAdmin(id)) {
             forward.setRedirect(true);
-            forward.setPath("/GoodsList.ag");
+            forward.setPath("/privacy/PrivacyList.jsp");
             return forward;
-         }else {
-            forward.setRedirect(true);
-            forward.setPath("/GoodsList.go-item=new_item");
-            return forward;
-         }
       }else if(check ==0) {
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
