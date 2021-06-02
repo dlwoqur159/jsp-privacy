@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
-import dto.PrivacyDTO;
+import vo.privacyBean;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
@@ -19,7 +19,7 @@ public class privacyDAO {
 	ResultSet rs = null;
 	private static privacyDAO privacyDAO;
 
-	//DB ����?
+	//DB 占쏙옙占쏙옙?
 	public privacyDAO() {
 		try {
 			Context initCtx = new InitialContext();
@@ -30,13 +30,13 @@ public class privacyDAO {
 		}
 	}
 	
-	//ȸ������ ���
+	//회占쏙옙占쏙옙占쏙옙 占쏙옙占�
 	private boolean insertPrivacy(PrivacyDTO dto) throws SQLException{
 		String sql = null;
 		
 		try {
 			con = ds.getConnection();
-			sql = "insert into privacy values " + "(?,?,?,?,?,?,?,?,?,?)"; //10��
+			sql = "insert into privacy values " + "(?,?,?,?,?,?,?,?,?,?)"; //10占쏙옙
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, dto.getPRIVACY_NUM());
@@ -61,7 +61,7 @@ public class privacyDAO {
 
 	}
 	
-	//�α��� ���
+	//占싸깍옙占쏙옙 占쏙옙占�
 	public int userCheck(String id, String pw) throws SQLException{
 		String sql = null;
 		int x=-1;
