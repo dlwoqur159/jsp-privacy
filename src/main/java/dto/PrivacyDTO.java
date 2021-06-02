@@ -1,18 +1,15 @@
 package dto;
 import java.sql.Date;
 import java.sql.Timestamp;
+
 public class PrivacyDTO {
 
-	private int PRIVACY_NUM;
-	private String PRIVACY_ID;
-	private String PRIVACY_PW;
-	private String PRIVACY_NAME;
-	private String PRIVACY_TEL;
-	private String PRIVACY_Company_Name;
-	private String PRIVACY_RANK;
-	private Date PRIVACY_BIRTH;
-	private Timestamp PRIVACY_DATE;
-	private int PRIVACY_ADMIN;
+	private int PRIVACY_NUM; //번호
+	private String PRIVACY_NAME; //이름
+	private String PRIVACY_TEL; // 전화번호
+	private String PRIVACY_Company_Name; //소속명
+	private String PRIVACY_RANK; // 직급
+	private Timestamp PRIVACY_DATE; // 명함 생성 날짜
 	
 	public int getPRIVACY_NUM() {
 		return PRIVACY_NUM;
@@ -21,24 +18,7 @@ public class PrivacyDTO {
 	public void setPRIVACY_NUM(int PRIVACY_num) {
 		PRIVACY_NUM = PRIVACY_num;
 	}
-	
-	public String getPRIVACY_ID() {
-		return PRIVACY_ID;
-	}
-	
-	public void setPRIVACY_ID(String PRIVACY_ID) {
-		this.PRIVACY_ID = PRIVACY_ID;
-	}
-	
-	public String getPRIVACY_PW() {
-		return PRIVACY_PW;
-	}
-	
-	public void setPRIVACY_PW(String PRIVACY_PW) {
-		this.PRIVACY_PW = PRIVACY_PW;
-	}
-	
-	
+		
 	public String getPRIVACY_TEL() {
 		return PRIVACY_TEL;
 	}
@@ -67,15 +47,7 @@ public class PrivacyDTO {
 	public void setPRIVACY_RANK(String PRIVACY_RANK) {
 		this.PRIVACY_RANK = PRIVACY_RANK;
 	}
-	
-	public Date getPRIVACY_BIRTH() {
-		return PRIVACY_BIRTH;
-	}
-	
-	public void setPRIVACY_BIRTH(Date PRIVACY_birth) {
-		this.PRIVACY_BIRTH = PRIVACY_birth;
-	}
-	
+		
 	public Timestamp getPRIVACY_DATE() {
 		return PRIVACY_DATE;
 	}
@@ -84,11 +56,4 @@ public class PrivacyDTO {
 		PRIVACY_DATE = PRIVACY_date;
 	}
 	
-	public int PRIVACY_ADMIN() {
-		return PRIVACY_ADMIN;
-	}
-	
-	public void PRIVACY_ADMIN(int PRIVACY_admin) {
-		PRIVACY_ADMIN = PRIVACY_admin;
-	}
 }
