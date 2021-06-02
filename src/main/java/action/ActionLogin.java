@@ -5,9 +5,8 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import dao.privacyDAO;
-import dto.memberDTO;
+import vo.privacyBean;
 import vo.ActionForward;
 
 public class ActionLogin implements Action {
@@ -32,7 +31,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('ºñ¹Ð¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.')");
+         out.println("alert('ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();
@@ -40,7 +39,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('ID°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.')");
+         out.println("alert('IDï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();

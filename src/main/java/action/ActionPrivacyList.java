@@ -3,16 +3,16 @@ package action;
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import svc.BoardListService;
+import svc.ServicePrivacyList;
 import vo.ActionForward;
-import dto.PrivacyDTO;
+import vo.privacyBean;
 import vo.PageInfo;
 
  public class ActionPrivacyList implements Action {
 	 
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		 
-		ArrayList<PrivacyDTO> articleList=new ArrayList<PrivacyDTO>();
+		ArrayList<privacyBean> articleList=new ArrayList<privacyBean>();
 	  	int page=1;
 		int limit=10;
 		
@@ -20,14 +20,14 @@ import vo.PageInfo;
 			page=Integer.parseInt(request.getParameter("page"));
 		}
 		
-		BoardListService boardListService = new BoardListService();
-		int listCount=boardListService.getListCount(); //ÃÑ ¸®½ºÆ® ¼ö¸¦ ¹Þ¾Æ¿È.
-		articleList = boardListService.getArticleList(page,limit); //¸®½ºÆ®¸¦ ¹Þ¾Æ¿È.
-		//ÃÑ ÆäÀÌÁö ¼ö.
-   		int maxPage=(int)((double)listCount/limit+0.95); //0.95¸¦ ´õÇØ¼­ ¿Ã¸² Ã³¸®.
-   		//ÇöÀç ÆäÀÌÁö¿¡ º¸¿©ÁÙ ½ÃÀÛ ÆäÀÌÁö ¼ö(1, 11, 21 µî...)
+		ServicePrivacyList Serviceprivacylist = new ServicePrivacyList();
+		int listCount=Serviceprivacylist.getListCount(); //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½.
+		articleList = Serviceprivacylist.getArticleList(page,limit); //ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½.
+		//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+   		int maxPage=(int)((double)listCount/limit+0.95); //0.95ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½Ã¸ï¿½ Ã³ï¿½ï¿½.
+   		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(1, 11, 21 ï¿½ï¿½...)
    		int startPage = (((int) ((double)page / 10 + 0.9)) - 1) * 10 + 1;
-   		//ÇöÀç ÆäÀÌÁö¿¡ º¸¿©ÁÙ ¸¶Áö¸· ÆäÀÌÁö ¼ö.(10, 20, 30 µî...)
+   		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.(10, 20, 30 ï¿½ï¿½...)
    	        int endPage = startPage+10-1;
 
    		if (endPage> maxPage) endPage= maxPage;
@@ -41,7 +41,7 @@ import vo.PageInfo;
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("articleList", articleList);
 		ActionForward forward= new ActionForward();
-   		forward.setPath("/board/qna_board_list.jsp");
+   		forward.setPath("/board/qna_board_list.jsp"); // ìˆ˜ì •
    		return forward;
    		
 	 }

@@ -13,7 +13,7 @@ public class ActionIDCheck implements Action{
 			      String id = request.getParameter("MEMBER_ID");
 			      
 			      privacyDAO privacydao = new privacyDAO();
-			      int  check = privacydao.confirmId(id);
+			      int  check = privacydao.confirmld(id);
 			      
 			      request.setAttribute("id", id);
 			      request.setAttribute("check", check);

@@ -5,8 +5,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.privacyDAO;
-import dto.memberDTO;
+import vo.privacyBean;
 import vo.ActionForward;
 
 public class ActionJoin implements Action {
@@ -15,8 +14,8 @@ public class ActionJoin implements Action {
 		
 		req.setCharacterEncoding("UTF-8");
 		
-		privacyDAO pdao = new privacyDAO();
-		memberDTO pdto = new memberDTO();
+		privacyBean pdao = new privacyBean();
+		privacyBean pdto = new privacyBean();
 		ActionForward forward = null;
 		
 		pdto.setMEMBER_ID(req.getParameter("MEMBER_ID"));
