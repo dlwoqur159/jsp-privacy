@@ -65,7 +65,7 @@
 </style>
 </head>
 <body>
-<form name="joinform" action="joinProcess.jsp" method="post">
+<form name="joinform" action="ActionJoin" method="post">
 <table class = "tbclass">
 	<tr>
 		<td colspan="2" class = "td_title">

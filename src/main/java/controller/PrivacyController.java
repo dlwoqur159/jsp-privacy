@@ -38,10 +38,10 @@ public class PrivacyController extends HttpServlet {
 		
 		if(command.equals("/Login.do")){
 			forward=new ActionForward();
-			forward.setPath("/WEB-INF/Login.jsp");
+			forward.setPath("/WEB-INF/member/Login.jsp");
 		}else if(command.equals("/Join.do")){
 			forward=new ActionForward();
-			forward.setPath("/WEB-INF/Join.jsp");
+			forward.setPath("/WEB-INF/member/Join.jsp");
 		}else if(command.equals("/ActionLogin.do")){
 			action = new ActionLogin();
 			try {
@@ -49,17 +49,14 @@ public class PrivacyController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("/Choice.do")){
-			forward=new ActionForward();
-			forward.setPath("/WEB-INF/Choice.jsp");
 		}else if(command.equals("/IDCheck.do")){
 			action = new ActionIDCheck();
 			try {
 				forward=action.execute(req, resp );
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
-		
+			}	
+		}
 		
 		if(forward != null){
 			
@@ -72,6 +69,7 @@ public class PrivacyController extends HttpServlet {
 			}
 			
 		}
+	
 	}
 }
 
