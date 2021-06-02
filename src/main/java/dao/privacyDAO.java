@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
 import dto.PrivacyDTO;
+import dto.memberDTO;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
@@ -17,10 +19,10 @@ public class privacyDAO {
 	PreparedStatement pstmt=null;
 	Connection con = null;
 	ResultSet rs = null;
-	private static privacyDAO privacyDAO;
+	private static memberDAO memberDAO;
 
 	//DB ����?
-	public privacyDAO() {
+	public memberDAO() {
 		try {
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context)initCtx.lookup("java:comp/nev");
@@ -31,24 +33,19 @@ public class privacyDAO {
 	}
 	
 	//ȸ������ ���
-	private boolean insertPrivacy(PrivacyDTO dto) throws SQLException{
+	private boolean insertmember(memberDTO dto) throws SQLException{
 		String sql = null;
 		
 		try {
 			con = ds.getConnection();
-			sql = "insert into privacy values " + "(?,?,?,?,?,?,?,?,?,?)"; //10��
+			sql = "insert into member values " + "(?,?,?,?,?)"; //10��
 			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, dto.getPRIVACY_NUM());
-			pstmt.setString(2, dto.getPRIVACY_ID());
-			pstmt.setString(3, dto.getPRIVACY_PW());
-			pstmt.setString(4, dto.getPRIVACY_NAME());
-			pstmt.setString(5, dto.getPRIVACY_TEL());
-			pstmt.setString(6, dto.getPRIVACY_Company_Name());
-			pstmt.setString(7, dto.getPRIVACY_RANK());
-			pstmt.setDate(8, dto.getPRIVACY_BIRTH());
-			pstmt.setTimestamp(9, dto.getPRIVACY_DATE());
-			pstmt.setInt(10, dto.PRIVACY_ADMIN());
+			pstmt.setString(1, dto.getMEMBER_ID());
+			pstmt.setString(2, dto.getMEMBER_PW());
+			pstmt.setString(3, dto.getMEMBER_ADD());
+			pstmt.setString(4, dto.getMEMBER_TEL());
+			pstmt.setString(5, dto.getMEMBER_AGE());
 					
 		}catch(Exception ex) {
 			ex.printStackTrace();
@@ -68,12 +65,12 @@ public class privacyDAO {
 		
 		try {
 			con=ds.getConnection();
-			sql = "select PRIVACY_PW from privacy where PRIVACY_PW = ?";
+			sql = "select MEMBER_PW from member where MEMBER_PW = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			if(rs.next()) {
-				String privacypw=rs.getString("PRIVACY_PW");
-				if(privacypw.equals(pw)) {
+				String memberpw=rs.getString("MEMBER_PW");
+				if(memberpw.equals(pw)) {
 					x=1;
 				}else {
 					x=0;
@@ -100,7 +97,7 @@ public class privacyDAO {
 		
 		try {
 			con = ds.getConnection();
-			sql = "select PRIVACY_ID from privacy where PRIVACY_ID=?";
+			sql = "select MEMBER_ID from member where MEMBER_ID=?";
 			
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1,  id);;
@@ -125,6 +122,39 @@ public class privacyDAO {
 		return -1;
 	}
 	
+	public memberDTO getMember(String id) throws SQLException{//74
+		
+		memberDTO member = null;
+		String sql = null;
+		
+		try {
+			con=ds.getConnection();
+			sql = "select MEMBER_PW from member where MEMBER_PW = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				member=new memberDTO();
+				
+				member.setMEMBER_ID(rs.getString("MEMBER_ID()"));
+				member.setMEMBER_PW(rs.getString("MEMBER_PW()"));
+				member.setMEMBER_ADD(rs.getString("MEMBER_ADD()"));
+				member.setMEMBER_TEL(rs.getString("MEMBER_TEL()"));
+				member.setMEMBER_AGE(rs.getString("MEMBER_AGE()"));
+				
+				return member;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null) { pstmt.close();}
+			if(rs != null) { rs.close();}
+			if(con != null) { con.close();}
+		}
+		
+		return null;
+	}
 	
 		
 		
