@@ -7,7 +7,7 @@
 		password="privacyJSP"
 		driverClassName="com.mysql.jdbc.Driver"
 		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
-		url="jdbc:mysql://privacy.cv8yn1l1bh6f.ap-northeast-2.rds.amazonaws.com:3306/privacy"
+		url="jdbc:mysql://privacy.cv8yn1l1bh6f.ap-northeast-2.rds.amazonaws.com:3306/privacy?useSSL=false"
 		maxActive="500"
 	/>
 </Context>

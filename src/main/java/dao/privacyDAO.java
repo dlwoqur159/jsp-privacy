@@ -25,7 +25,7 @@ public class privacyDAO {
 
 		try {
 			Context initCtx = new InitialContext();
-			Context envCtx = (Context)initCtx.lookup("java:comp/nev");
+			Context envCtx = (Context)initCtx.lookup("java:comp/env");
 			ds=(DataSource)envCtx.lookup("jdbc/MySQLDB");
 		}catch(Exception ex) {
 			ex.printStackTrace();
@@ -49,6 +49,9 @@ public class privacyDAO {
 			pstmt.setString(3, bean.getMEMBER_ADD());
 			pstmt.setString(4, bean.getMEMBER_TEL());
 			pstmt.setString(5, bean.getMEMBER_AGE());
+			pstmt.executeUpdate();
+			
+			return true;
 					
 		}catch(Exception ex) {
 			ex.printStackTrace();
@@ -68,7 +71,7 @@ public class privacyDAO {
 		
 		try {
 			con=ds.getConnection();
-			sql = "select MEMBER_PW from member where MEMBER_PW = ?";
+			sql = "select MEMBER_PW from member where MEMBER_ID = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			if(rs.next()) {
@@ -132,7 +135,7 @@ public class privacyDAO {
 		
 		try {
 			con=ds.getConnection();
-			sql = "select MEMBER_PW from member where MEMBER_PW = ?";
+			sql = "select *from member where MEMBER_ID = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs=pstmt.executeQuery();

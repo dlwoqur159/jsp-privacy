@@ -27,6 +27,8 @@ public class ActionJoin implements Action {
 		
 		pdao.insertPrivacy(pdto);
 		
+		forward = new ActionForward();
+		
 		forward.setRedirect(true);
 		forward.setPath("Login.do");
 		req.getSession().setAttribute("msg", "1");

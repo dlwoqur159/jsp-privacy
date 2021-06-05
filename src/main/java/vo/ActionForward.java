@@ -1,8 +1,8 @@
 package vo;
-// ÆäÀÌÁö ÀÌµ¿À» Ã³¸®ÇÏ±â À§ÇÑ Å¬·¡½º
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 public class ActionForward {
 	private boolean isRedirect=false;
-	private String path=null; // ÀÌµ¿ÇÒ ´ÙÀ½ È­¸é
+	private String path=null; // ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½
 	
 	
 	public boolean isRedirect(){
