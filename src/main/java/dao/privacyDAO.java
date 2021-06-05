@@ -1,13 +1,19 @@
 package dao;
 
 import static db.JdbcUtil.*;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
+
 import vo.privacyBean;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
@@ -17,7 +23,7 @@ public class privacyDAO {
 	PreparedStatement pstmt=null;
 	Connection con = null;
 	ResultSet rs = null;
-	private static privacyBean privacyBean;
+	//private static privacyBean privacyBean;
 
 
 	//DB ����?
@@ -25,7 +31,7 @@ public class privacyDAO {
 
 		try {
 			Context initCtx = new InitialContext();
-			Context envCtx = (Context)initCtx.lookup("java:comp/nev");
+			Context envCtx = (Context)initCtx.lookup("java:comp/env");
 			ds=(DataSource)envCtx.lookup("jdbc/MySQLDB");
 		}catch(Exception ex) {
 			ex.printStackTrace();
@@ -68,7 +74,7 @@ public class privacyDAO {
 		
 		try {
 			con=ds.getConnection();
-			sql = "select MEMBER_PW from member where MEMBER_PW = ?";
+			sql = "select MEMBER_PW from member where MEMBER_ID = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			if(rs.next()) {
@@ -132,7 +138,7 @@ public class privacyDAO {
 		
 		try {
 			con=ds.getConnection();
-			sql = "select MEMBER_PW from member where MEMBER_PW = ?";
+			sql = "select MEMBER_PW from member where MEMBER_ID = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs=pstmt.executeQuery();

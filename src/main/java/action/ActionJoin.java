@@ -17,7 +17,7 @@ public class ActionJoin implements Action {
 		
 		privacyDAO pdao = new privacyDAO();
 		privacyBean pdto = new privacyBean();
-		ActionForward forward = null;
+		ActionForward forward = new ActionForward();
 		
 		pdto.setMEMBER_ID(req.getParameter("MEMBER_ID"));
 		pdto.setMEMBER_PW(req.getParameter("MEMBER_PW"));
@@ -27,9 +27,19 @@ public class ActionJoin implements Action {
 		
 		pdao.insertPrivacy(pdto);
 		
+		/*
+		resp.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = resp.getWriter();
+		out.println("<script>");
+		out.println("alert('회원가입 성공')");
+		out.println("location.herf='./Login.do';");
+		out.println("</script>");
+		out.close();
+		*/
+		
 		forward.setRedirect(true);
 		forward.setPath("Login.do");
-		req.getSession().setAttribute("msg", "1");
+		//req.getSession().setAttribute("msg", "1");
 		
 		return forward;
 		

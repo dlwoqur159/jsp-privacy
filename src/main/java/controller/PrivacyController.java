@@ -16,7 +16,7 @@ import action.ActionIDCheck;
 
 @WebServlet("*.do")
 public class PrivacyController extends HttpServlet {
-
+/*
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		process(req, resp);
@@ -26,8 +26,8 @@ public class PrivacyController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		process(req, resp);
 	}
-	
-	public void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	*/
+	public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		String RequestURI=req.getRequestURI();
 		String contextPath=req.getContextPath();
@@ -39,9 +39,11 @@ public class PrivacyController extends HttpServlet {
 		if(command.equals("/Login.do")){
 			forward=new ActionForward();
 			forward.setPath("/WEB-INF/member/Login.jsp");
+			forward.setRedirect(false);
 		}else if(command.equals("/Join.do")){
 			forward=new ActionForward();
 			forward.setPath("/WEB-INF/member/Join.jsp");
+			forward.setRedirect(false);
 		}else if(command.equals("/ActionLogin.do")){
 			action = new ActionLogin();
 			try {
@@ -65,9 +67,9 @@ public class PrivacyController extends HttpServlet {
 			}	
 		}
 		
-		 // È­¸éÀÌµ¿ - isRedirext() °ª¿¡ µû¶ó sendRedirect ¶Ç´Â forward¸¦ »ç¿ë
-        // sendRedirect : »õ·Î¿î ÆäÀÌÁö¿¡¼­´Â request¿Í response°´Ã¼°¡ »õ·Ó°Ô »ý¼ºµÈ´Ù.
-        // forward : ÇöÀç ½ÇÇàÁßÀÎ ÆäÀÌÁö¿Í forwad¿¡ ÀÇÇØ È£ÃâµÉ ÆäÀÌÁö´Â request¿Í response °´Ã¼¸¦ °øÀ¯
+		 // È­ï¿½ï¿½ï¿½Ìµï¿½ - isRedirext() ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ sendRedirect ï¿½Ç´ï¿½ forwardï¿½ï¿½ ï¿½ï¿½ï¿½
+        // sendRedirect : ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ requestï¿½ï¿½ responseï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½.
+        // forward : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ forwadï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ requestï¿½ï¿½ response ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		if(forward != null){
 			
