@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.privacyDAO;
 import vo.privacyBean;
 import vo.ActionForward;
 
@@ -14,7 +15,7 @@ public class ActionJoin implements Action {
 		
 		req.setCharacterEncoding("UTF-8");
 		
-		privacyBean pdao = new privacyBean();
+		privacyDAO pdao = new privacyDAO();
 		privacyBean pdto = new privacyBean();
 		ActionForward forward = null;
 		
@@ -24,13 +25,11 @@ public class ActionJoin implements Action {
 		pdto.setMEMBER_TEL(req.getParameter("MEMBER_TEL"));
 		pdto.setMEMBER_AGE(req.getParameter("MEMBER_AGE"));
 		
-		resp.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = resp.getWriter();
-		out.println("<script>");
-		out.println("alert('success')");
-		out.println("location.href='Login.do");
-		out.println("</script>");
-		out.close();
+		pdao.insertPrivacy(pdto);
+		
+		forward.setRedirect(true);
+		forward.setPath("Login.do");
+		req.getSession().setAttribute("msg", "1");
 		
 		return forward;
 		

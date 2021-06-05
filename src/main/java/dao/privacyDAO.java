@@ -34,7 +34,7 @@ public class privacyDAO {
 	
 
 	//회占쏙옙占쏙옙占쏙옙 占쏙옙占�
-	private boolean insertPrivacy(privacyBean bean) throws SQLException{
+	public boolean insertPrivacy(privacyBean bean) throws SQLException{
 
 		String sql = null;
 		

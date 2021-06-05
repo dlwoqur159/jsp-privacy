@@ -47,8 +47,9 @@ input {
             <input type="text" placeholder="ID" name="txtId" id = "id" required style="height:30px; width: 380px" /><br />
             <input type="password" placeholder="PW" name="txtPw" id= "pass" required style="height:30px; width: 380px" /><br />
             <input type="submit" value="로그인" class="button" />
+            <a href="Join.do"><input type="button" value="회원가입" class="button"/></a>
 		</form>
-		<a href="Join.do"><input type="button" value="회원가입" class="button"/></a>
+		
 		 <hr />
     </div>
 </section>
