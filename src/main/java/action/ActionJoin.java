@@ -21,6 +21,7 @@ public class ActionJoin implements Action {
 		
 		pdto.setMEMBER_ID(req.getParameter("MEMBER_ID"));
 		pdto.setMEMBER_PW(req.getParameter("MEMBER_PW"));
+		pdto.setMEMBER_NAME(req.getParameter("MEMBER_NAME"));
 		pdto.setMEMBER_ADD(req.getParameter("MEMBER_ADD"));
 		pdto.setMEMBER_TEL(req.getParameter("MEMBER_TEL"));
 		pdto.setMEMBER_AGE(req.getParameter("MEMBER_AGE"));

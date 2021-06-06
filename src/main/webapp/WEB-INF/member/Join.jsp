@@ -60,9 +60,10 @@ function check(){
 var id = joinform.MEMBER_ID.value;
 var password1 = joinform.MEMBER_PW.value;
 var password2 = joinform.MEMBER_PW2.value;
-var phone = joinform.MEMBER_PHONE.value;
-var companyname = joinform.MEMBER_COMPANYNAME.value;
-var mygrade = joinform.MEMBER_MYGRADE.value;
+var name = joinform.MEMBER_NAME.value;
+var phone = joinform.MEMBER_TEL.value;
+var add = joinform.MEMBER_ADD.value;
+
 
 var forms = document.getElementbyId("joinform");
 
@@ -88,21 +89,16 @@ joinform.MEMBER_PW2.value="";
 joinform.MEMBER_PW.focus();
 return false;
 }
-
 if(phone.length == 0 ){
 alert("휴대폰 번호를 입력하여 주세요");
 joinform.MEMBER_TEL.focus();
 return false;
 }
-if(companyname.length == 0 ){
-alert("회사명을 입력하여 주세요");
-joinform.MEMBER_COMPANYNAME.focus();
+if(add.length == 0 ){
+alert("주소를 입력하여 주세요");
+joinform.MEMBER_ADD.focus();
 return false;
 }
-if(mygrade.length == 0 ){
-alert("직위를 입력하여 주세요");
-joinform.MEMBER_MYGRADE.focus();
-return false;
 }
 return true;
 }
@@ -143,6 +139,8 @@ event.returnValue=false;
    <input type = "password" name="MEMBER_PW" id= "pass" placeholder="PW" size = "15" class="txt-box" /> 
 
    <input type = "text" name="MEMBER_NAME" id = "name" size="20" placeholder="이름" class="txt-box" /> 
+   
+   <input type = "text" name="MEMBER_ADD" id = "add" size="20" placeholder="주소" class="txt-box" /> 
 
    <input type = "text" name="MEMBER_TEL" id="phonenumber" size = "15" placeholder="전화번호" class="txt-box" />
 

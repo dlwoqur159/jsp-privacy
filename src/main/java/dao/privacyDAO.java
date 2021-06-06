@@ -41,14 +41,15 @@ public class privacyDAO {
 		try {
 			con = ds.getConnection();
 
-			sql = "insert into member values " + "(?,?,?,?,?)"; //10��
+			sql = "insert into member values " + "(?,?,?,?,?,?)"; //10��
 		
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getMEMBER_ID());
 			pstmt.setString(2, bean.getMEMBER_PW());
-			pstmt.setString(3, bean.getMEMBER_ADD());
-			pstmt.setString(4, bean.getMEMBER_TEL());
-			pstmt.setString(5, bean.getMEMBER_AGE());
+			pstmt.setString(3, bean.getMEMBER_NAME());
+			pstmt.setString(4, bean.getMEMBER_ADD());
+			pstmt.setString(5, bean.getMEMBER_TEL());
+			pstmt.setString(6, bean.getMEMBER_AGE());
 			pstmt.executeUpdate();
 			
 			return true;
@@ -146,6 +147,7 @@ public class privacyDAO {
 				
 				member.setMEMBER_ID(rs.getString("MEMBER_ID()"));
 				member.setMEMBER_PW(rs.getString("MEMBER_PW()"));
+				member.setMEMBER_NAME(rs.getString("MEMBER_NAME()"));
 				member.setMEMBER_ADD(rs.getString("MEMBER_ADD()"));
 				member.setMEMBER_TEL(rs.getString("MEMBER_TEL()"));
 				member.setMEMBER_AGE(rs.getString("MEMBER_AGE()"));

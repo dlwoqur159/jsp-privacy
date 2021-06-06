@@ -25,7 +25,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
       if(check ==1) {
          session.setAttribute("MEMBER_ID", id);
             forward.setRedirect(true);
-            forward.setPath("/privacy/PrivacyList.jsp");
+            forward.setPath("Join.do");
             return forward;
       }else if(check ==0) {
          resp.setContentType("text/html;charset=UTF-8");

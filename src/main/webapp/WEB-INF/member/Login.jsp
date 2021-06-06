@@ -37,15 +37,35 @@ input {
    margin-top: 5px;
 }
 </style>
+<script >
+function check(){
+var ID = joinform.MEMBER_ID.value;
+var PW = joinform.MEMBER_PW.value;
+
+var forms = document.getElementbyId("joinform");
+
+if(ID.length == 0){
+	alert("아이디를 입력하여 주세요");
+	joinform.MEMBER_ID.focus();
+	return false;
+	}
+if(PW.length == 0){
+alert("아이디를 입력하여 주세요");
+joinform.MEMBER_PW.focus();
+return false;
+}
+</script>
+
 </head>
 <body>
+
 <section>
    <div class="container">
            <h5>로그인 페이지</h5>
            <form name="loginform" action="ActionLogin.do" method="POST">
         <hr />
-            <input type="text" placeholder="ID" name="txtId" id = "id" required style="height:30px; width: 380px" /><br />
-            <input type="password" placeholder="PW" name="txtPw" id= "pass" required style="height:30px; width: 380px" /><br />
+            <input type = "text" name="MEMBER_ID" id="id" placeholder="ID" size="20" maxlength=15 class="txt-box" />
+            <input type = "password" name="MEMBER_PW" id= "pass" placeholder="PW" size = "15" class="txt-box" /> 
             <input type="submit" value="로그인" class="button" />
             <a href="Join.do"><input type="button" value="회원가입" class="button"/></a>
 		</form>

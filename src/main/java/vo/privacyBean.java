@@ -6,6 +6,7 @@ public class privacyBean {
 	private String MEMBER_ID; // ID �⺻Ű
 	private String MEMBER_PW; // ��й�ȣ
 	private String MEMBER_ADD; // �ּ�
+	private String MEMBER_NAME;
 	private String MEMBER_TEL; // ��ȭ��ȣ
 	private String MEMBER_AGE; // ����
 	private int PRIVACY_NUM; //��ȣ
@@ -29,6 +30,13 @@ public class privacyBean {
 	
 	public void setMEMBER_PW(String MEMBER_pw) {
 		MEMBER_PW = MEMBER_pw;
+	}
+	
+	public String getMEMBER_NAME() {
+		return MEMBER_NAME;
+	}
+	public void setMEMBER_NAME(String MEMBER_Name) {
+		this.MEMBER_NAME = MEMBER_Name;
 	}
 	
 	public String getMEMBER_ADD() {
