@@ -261,16 +261,17 @@ public class privacyDAO {
 
 			//sql = "insert into privacy values " + "(?,?,?,?,?,?,?)"; //10��
 			
-			sql="insert into board (PRIVACY_NUM,PRIVACY_NAME,PRIVACY_TEL, ";
+			sql="insert into privacy (MEMBER_ID,PRIVACY_NUM,PRIVACY_NAME,PRIVACY_TEL, ";
 			sql+="PRIVACY_Company_Name, PRIVACY_RANK,"
-					+ "PRIVACY_DATE) values(?,?,?,?,?,now())";
+					+ "PRIVACY_DATE) values(?,?,?,?,?,?,now())";
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, num);
-			pstmt.setString(2, article.getPRIVACY_NAME());
-			pstmt.setString(3, article.getPRIVACY_TEL());
-			pstmt.setString(4, article.getPRIVACY_Company_Name());
-			pstmt.setString(5, article.getPRIVACY_RANK());
+			pstmt.setString(1, article.getMEMBER_ID());
+			pstmt.setInt(2, num);
+			pstmt.setString(3, article.getPRIVACY_NAME());
+			pstmt.setString(4, article.getPRIVACY_TEL());
+			pstmt.setString(5, article.getPRIVACY_Company_Name());
+			pstmt.setString(6, article.getPRIVACY_RANK());
 
 			insertCount=pstmt.executeUpdate();
 

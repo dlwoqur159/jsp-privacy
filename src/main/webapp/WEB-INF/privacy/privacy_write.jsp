@@ -50,8 +50,7 @@ h2 {
 
    <section id="writeForm">
       <h2>명함작성</h2>
-      <form action="PrivacyWriteForm.do" method="post"
-         enctype="multipart/form-data" name="boardform">
+      <form action="PrivacyWritePro.do" method="post" name="boardform">
          <div id = writebox>
                <input placeholder="성함" name="PRIVACY_NAME" id = "PRIVACY_NAME" class="input_style"/>
                <input id="PRIVACY_TEL" placeholder="연락처" name="PRIVACY_TEL" required="required" class="input_style"/>

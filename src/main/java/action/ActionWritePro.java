@@ -14,7 +14,6 @@ public class ActionWritePro implements Action {
 
 		ActionForward forward=null;
 		privacyBean privacyBean = null;
-		int fileSize=5*1024*1024;
 		ServletContext context = request.getServletContext();  		
 		privacyBean = new privacyBean();
 		privacyBean.setPRIVACY_NAME(request.getParameter("PRIVACY_NAME"));
