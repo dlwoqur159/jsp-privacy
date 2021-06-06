@@ -21,13 +21,13 @@ import vo.PageInfo;
 		}
 		
 		ServicePrivacyList Serviceprivacylist = new ServicePrivacyList();
-		int listCount=Serviceprivacylist.getListCount(); //�� ����Ʈ ���� �޾ƿ�.
-		articleList = Serviceprivacylist.getArticleList(page,limit); //����Ʈ�� �޾ƿ�.
-		//�� ������ ��.
-   		int maxPage=(int)((double)listCount/limit+0.95); //0.95�� ���ؼ� �ø� ó��.
-   		//���� �������� ������ ���� ������ ��(1, 11, 21 ��...)
+		int listCount=Serviceprivacylist.getListCount(); //占쏙옙 占쏙옙占쏙옙트 占쏙옙占쏙옙 占쌨아울옙.
+		articleList = Serviceprivacylist.getArticleList(page,limit); //占쏙옙占쏙옙트占쏙옙 占쌨아울옙.
+		//占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙.
+   		int maxPage=(int)((double)listCount/limit+0.95); //0.95占쏙옙 占쏙옙占쌔쇽옙 占시몌옙 처占쏙옙.
+   		//占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙(1, 11, 21 占쏙옙...)
    		int startPage = (((int) ((double)page / 10 + 0.9)) - 1) * 10 + 1;
-   		//���� �������� ������ ������ ������ ��.(10, 20, 30 ��...)
+   		//占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙.(10, 20, 30 占쏙옙...)
    	        int endPage = startPage+10-1;
 
    		if (endPage> maxPage) endPage= maxPage;
@@ -41,7 +41,7 @@ import vo.PageInfo;
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("articleList", articleList);
 		ActionForward forward= new ActionForward();
-   		forward.setPath("/board/qna_board_list.jsp"); // 수정
+   		forward.setPath("/WEB-INF/privacy/privacy_list.jsp"); // �닔�젙
    		return forward;
    		
 	 }

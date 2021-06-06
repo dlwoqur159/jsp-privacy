@@ -17,9 +17,85 @@ public class privacyDAO {
 	PreparedStatement pstmt=null;
 	Connection con = null;
 	ResultSet rs = null;
-	private static privacyBean privacyBean;
+	private static privacyDAO privacyDAO;
+
+	public static privacyDAO getInstance(){
+		if(privacyDAO == null){
+			privacyDAO = new privacyDAO();
+		}
+		return privacyDAO;
+	}
+
+	public void setConnection(Connection con){
+		this.con = con;
+	}
+	
+	//글의 개수 구하기.
+	public int selectListCount() {
+
+		int listCount= 0;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try{
 
 
+			System.out.println("getConnection");
+			pstmt=con.prepareStatement("select count(*) from privacy");
+			rs = pstmt.executeQuery();
+
+			if(rs.next()){
+				listCount=rs.getInt(1);
+			}
+		}catch(Exception ex){
+			System.out.println("getListCount 에러: " + ex);			
+		}finally{
+			close(rs);
+			close(pstmt);
+		}
+
+		return listCount;
+
+	}
+	
+	//글 목록 보기.	
+		public ArrayList<privacyBean> selectArticleList(int page,int limit){
+
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String privacy_list_sql="select * from privacy order by PRIVACY_NUM desc limit ?,10";
+			ArrayList<privacyBean> articleList = new ArrayList<privacyBean>();
+			privacyBean privacy = null;
+			int startrow=(page-1)*10; //읽기 시작할 row 번호..	
+
+			try{
+				pstmt = con.prepareStatement(privacy_list_sql);
+				pstmt.setInt(1, startrow);
+				rs = pstmt.executeQuery();
+
+				while(rs.next()){
+					privacy = new privacyBean();
+					privacy.setPRIVACY_NUM(rs.getInt("PRIVACY_NUM"));
+					privacy.setPRIVACY_NAME(rs.getNString("PRIVACY_NAME"));
+					privacy.setPRIVACY_TEL(rs.getNString("PRIVACY_TEL"));
+					privacy.setPRIVACY_Company_Name(rs.getString("PRIVACY_Company_Name"));
+					privacy.setPRIVACY_RANK(rs.getString("PRIVACY_RANK"));
+					privacy.setPRIVACY_DATE(rs.getTimestamp("PRIVACY_DATE"));
+					articleList.add(privacy);
+				}
+
+			}catch(Exception ex){
+				System.out.println("getBoardList 에러 : " + ex);
+			}finally{
+				close(rs);
+				close(pstmt);
+			}
+
+			return articleList;
+
+		}
+	
+	
 	//DB ����?
 	public privacyDAO() {
 
@@ -169,13 +245,5 @@ public class privacyDAO {
 		
 		
 		
-	
-	/*
-	public static privacyDAO getInstance(){
-		if(privacyDAO == null){
-			privacyDAO = new privacyDAO();
-		}
-		return privacyDAO;
-	}*/
-	
+
 }

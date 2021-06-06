@@ -13,7 +13,7 @@ public class ServicePrivacyList {
 		
 		int listCount = 0;
 		Connection con = getConnection();
-		privacyDAO privacyDAO = privacyDAO.getInstance();
+		privacyDAO privacyDAO = dao.privacyDAO.getInstance();
 		privacyDAO.setConnection(con);
 		listCount = privacyDAO.selectListCount();
 		close(con);
@@ -25,7 +25,7 @@ public class ServicePrivacyList {
 		
 		ArrayList<privacyBean> articleList = null;
 		Connection con = getConnection();
-		privacyDAO privacyDAO = BoardDAO.getInstance();
+		privacyDAO privacyDAO = dao.privacyDAO.getInstance();
 		privacyDAO.setConnection(con);
 		articleList = privacyDAO.selectArticleList(page,limit);
 		close(con);

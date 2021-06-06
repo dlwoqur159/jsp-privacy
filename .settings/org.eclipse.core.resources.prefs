@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/action/ActionJoin.java=UTF-8
 encoding//src/main/java/action/ActionLogin.java=UTF-8
+encoding//src/main/java/action/ActionPrivacyList.java=UTF-8
 encoding//src/main/java/controller/PrivacyController.java=UTF-8
 encoding//src/main/java/dao/privacyDAO.java=UTF-8
