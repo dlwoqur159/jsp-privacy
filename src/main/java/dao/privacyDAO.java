@@ -7,9 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
+import javax.websocket.Session;
+
 import vo.privacyBean;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpSession;
 
 public class privacyDAO {
 
@@ -253,7 +256,6 @@ public class privacyDAO {
 		try{
 			pstmt=con.prepareStatement("select max(PRIVACY_NUM) from privacy");
 			rs = pstmt.executeQuery();
-
 			if(rs.next())
 				num =rs.getInt(1)+1;
 			else
@@ -266,7 +268,7 @@ public class privacyDAO {
 					+ "PRIVACY_DATE) values(?,?,?,?,?,?,now())";
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, article.getMEMBER_ID());
+			pstmt.setString(1,  );
 			pstmt.setInt(2, num);
 			pstmt.setString(3, article.getPRIVACY_NAME());
 			pstmt.setString(4, article.getPRIVACY_TEL());

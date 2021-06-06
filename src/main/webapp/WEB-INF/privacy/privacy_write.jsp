@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 
+<%
+	String id= null;
+if (session.getAttribute("MEMBER_ID")!=null){
+	id=(String)session.getAttribute("MEMBER_ID");
+}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>

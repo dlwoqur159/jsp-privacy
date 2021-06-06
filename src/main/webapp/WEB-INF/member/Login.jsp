@@ -72,6 +72,7 @@ return false;
 </head>
 <body>
 <section>
+<%if(session.getAttribute("sessionId") == null) { %>
    <div class="container">
            <h5>로그인 페이지</h5>
            <form name="loginform" action="ActionLogin.do" method="POST">
@@ -84,6 +85,8 @@ return false;
       
        <hr />
     </div>
+   <% } %> 
+   
 </section>
 </body>
 </html>
