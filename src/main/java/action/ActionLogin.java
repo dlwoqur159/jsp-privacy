@@ -25,13 +25,13 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
       if(check ==1) {
          session.setAttribute("MEMBER_ID", id);
             forward.setRedirect(true);
-            forward.setPath("Join.do");
+            forward.setPath("PrivacyList.do");
             return forward;
       }else if(check ==0) {
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('비밀번호가 일치하지 않습니다.')");
+         out.println("alert('鍮꾨�踰덊샇媛� �씪移섑븯吏� �븡�뒿�땲�떎.')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();
@@ -39,7 +39,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('ID가 존재하지 않습니다.')");
+         out.println("alert('ID媛� 議댁옱�븯吏� �븡�뒿�땲�떎.')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import vo.ActionForward;
 import action.Action;
 import action.ActionLogin;
+import action.ActionPrivacyList;
 import action.ActionJoin;
 import action.ActionIDCheck;
 
@@ -64,10 +65,18 @@ public class PrivacyController extends javax.servlet.http.HttpServlet {
 				e.printStackTrace();
 			}	
 		}
+		else if(command.equals("/PrivacyList.do")){
+			action = new ActionPrivacyList();
+			try{
+				forward=action.execute(req, resp);
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
 		
-		 // ȭ���̵� - isRedirext() ���� ���� sendRedirect �Ǵ� forward�� ���
-        // sendRedirect : ���ο� ������������ request�� response��ü�� ���Ӱ� �����ȴ�.
-        // forward : ���� �������� �������� forwad�� ���� ȣ��� �������� request�� response ��ü�� ����
+		 // 화占쏙옙占싱듸옙 - isRedirext() 占쏙옙占쏙옙 占쏙옙占쏙옙 sendRedirect 占실댐옙 forward占쏙옙 占쏙옙占�
+        // sendRedirect : 占쏙옙占싸울옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 request占쏙옙 response占쏙옙체占쏙옙 占쏙옙占쌈곤옙 占쏙옙占쏙옙占싫댐옙.
+        // forward : 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 forwad占쏙옙 占쏙옙占쏙옙 호占쏙옙占� 占쏙옙占쏙옙占쏙옙占쏙옙 request占쏙옙 response 占쏙옙체占쏙옙 占쏙옙占쏙옙
 		
 		if(forward != null){
 			
