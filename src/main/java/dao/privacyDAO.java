@@ -241,7 +241,51 @@ public class privacyDAO {
 		return null;
 	}
 	
-		
+	//글 등록.
+	public int insertArticle(privacyBean article){
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int num =0;
+		String sql="";
+		int insertCount=0;
+
+		try{
+			pstmt=con.prepareStatement("select max(PRIVACY_NUM) from privacy");
+			rs = pstmt.executeQuery();
+
+			if(rs.next())
+				num =rs.getInt(1)+1;
+			else
+				num=1;
+
+			//sql = "insert into privacy values " + "(?,?,?,?,?,?,?)"; //10��
+			
+			sql="insert into board (PRIVACY_NUM,MEMBER_NAME,BOARD_PASS,PRIVACY_NAME,";
+			sql+="PRIVACY_Company_Name, PRIVACY_RANK, PRIVACY_TEL,"
+					+ "PRIVACY_DATE) values(?,?,?,?,?,?,?,now())";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.setString(2, article.getMEMBER_ID());
+			pstmt.setString(3, article.getMEMBER_PW());
+			pstmt.setString(4, article.getPRIVACY_NAME());
+			pstmt.setString(5, article.getPRIVACY_Company_Name());
+			pstmt.setString(6, article.getPRIVACY_RANK());
+			pstmt.setString(7, article.getPRIVACY_TEL());
+
+			insertCount=pstmt.executeUpdate();
+
+		}catch(Exception ex){
+			System.out.println("boardInsert 에러 : "+ex);
+		}finally{
+			close(rs);
+			close(pstmt);
+		}
+
+		return insertCount;
+
+	}
 		
 		
 		
