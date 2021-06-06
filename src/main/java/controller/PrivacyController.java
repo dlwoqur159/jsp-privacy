@@ -12,6 +12,7 @@ import vo.ActionForward;
 import action.Action;
 import action.ActionLogin;
 import action.ActionPrivacyList;
+import action.ActionWritePro;
 import action.ActionJoin;
 import action.ActionIDCheck;
 
@@ -77,7 +78,7 @@ public class PrivacyController extends javax.servlet.http.HttpServlet {
 			forward.setPath("/WEB_INF/board/privacy_write.jsp");
 		}
 		else if(command.equals("/PrivacyWritePro.do")){
-			action  = new BoardWriteProAction();
+			action  = new ActionWritePro();
 			try {
 				forward=action.execute(req, resp );
 			} catch (Exception e) {
