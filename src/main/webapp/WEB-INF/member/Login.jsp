@@ -3,39 +3,51 @@
 <head>
 <title>회원관리 시스템 로그인 페이지</title>
 <style>
+body, a, h1,h2 {
+	margin:0;
+	padding:0;
+	text-decoration: none;
+}
 .container {
    width: 385px;
    line-height: 50px;
    margin: 40px auto;
 }
-
 h5 {
    text-align: center;
    font-size: 25px;
 }
+.txt-box{
+	height:30px; 
+	width: 3s80px;
+}
 
-
-
-.button {
+.button1 {
    background-color: #2EFE64;
    color: white;
    border-radius: 5px;
    border: 0;
-   padding: 10px 172px;
+   padding: 10px;
+   font-size:12px;
+   width:90px;
+   border: 1px solid lightgray;
+   border-radius: 3px;
+   margin-top: 5px;
+
+}
+.button2 {
+   background-color: #2EFE64;
+   color: white;
+   border-radius: 5px;
+   border: 0;
+   padding: 10px 155px;
    width:380px;
-}
-
-
-p {
-   text-align: center;
-}
-
-
-input {
    border: 1px solid lightgray;
    border-radius: 3px;
    margin-top: 5px;
 }
+
+
 </style>
 </head>
 <body>
@@ -44,10 +56,10 @@ input {
            <h5>로그인 페이지</h5>
            <form name="loginform" action="ActionLogin.do" method="POST">
         <hr />
-            <input type="text" placeholder="ID" name="txtId" id = "id" required style="height:30px; width: 380px" /><br />
-            <input type="password" placeholder="PW" name="txtPw" id= "pass" required style="height:30px; width: 380px" /><br />
-            <input type="submit" value="로그인" class="button" />
-            <a href="Join.do" class="button">회원가입</a>
+            <input type="text" placeholder="ID" name="txtId" id = "id" class="txt-box" />
+            <input type="password" placeholder="PW" name="txtPw" id= "pass" class="txt-box"/>
+            <input type="submit" value="로그인" class="button2" />
+            <a class="button2" href="Join.do" >회원가입</a>
 		</form>
 		
 		 <hr />
