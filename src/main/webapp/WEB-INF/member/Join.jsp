@@ -91,7 +91,7 @@ return false;
 
 if(phone.length == 0 ){
 alert("휴대폰 번호를 입력하여 주세요");
-joinform.MEMBER_PHONE.focus();
+joinform.MEMBER_TEL.focus();
 return false;
 }
 if(companyname.length == 0 ){
@@ -144,7 +144,7 @@ event.returnValue=false;
 
    <input type = "text" name="MEMBER_NAME" id = "name" size="20" placeholder="이름" class="txt-box" /> 
 
-   <input type = "text" name="MEMBER_PHONE" id="phonenumber" size = "15" placeholder="전화번호" class="txt-box" />
+   <input type = "text" name="MEMBER_TEL" id="phonenumber" size = "15" placeholder="전화번호" class="txt-box" />
 
    <input type = "text" name="MEMBER_AGE" id = "age" size = "15" placeholder="나이" class="txt-box" /> 
 

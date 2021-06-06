@@ -3,17 +3,17 @@ package vo;
 import java.sql.Timestamp;
 
 public class privacyBean {
-	private String MEMBER_ID; // ID ±âº»Å°
-	private String MEMBER_PW; // ºñ¹Ð¹øÈ£
-	private String MEMBER_ADD; // ÁÖ¼Ò
-	private String MEMBER_TEL; // ÀüÈ­¹øÈ£
-	private String MEMBER_AGE; // Á÷±Þ
-	private int PRIVACY_NUM; //¹øÈ£
-	private String PRIVACY_NAME; //ÀÌ¸§
-	private String PRIVACY_TEL; // ÀüÈ­¹øÈ£
-	private String PRIVACY_Company_Name; //¼Ò¼Ó¸í
-	private String PRIVACY_RANK; // Á÷±Þ
-	private Timestamp PRIVACY_DATE; // ¸íÇÔ »ý¼º ³¯Â¥
+	private String MEMBER_ID; // ID ï¿½âº»Å°
+	private String MEMBER_PW; // ï¿½ï¿½Ð¹ï¿½È£
+	private String MEMBER_ADD; // ï¿½Ö¼ï¿½
+	private String MEMBER_TEL; // ï¿½ï¿½È­ï¿½ï¿½È£
+	private String MEMBER_AGE; // ï¿½ï¿½ï¿½ï¿½
+	private int PRIVACY_NUM; //ï¿½ï¿½È£
+	private String PRIVACY_NAME; //ï¿½Ì¸ï¿½
+	private String PRIVACY_TEL; // ï¿½ï¿½È­ï¿½ï¿½È£
+	private String PRIVACY_Company_Name; //ï¿½Ò¼Ó¸ï¿½
+	private String PRIVACY_RANK; // ï¿½ï¿½ï¿½ï¿½
+	private Timestamp PRIVACY_DATE; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥
 	
 	public String getMEMBER_ID() {
 		return MEMBER_ID;

@@ -23,7 +23,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
       
       int check = pdao.userCheck(id,pw);
       if(check ==1) {
-         session.setAttribute("id", id);
+         session.setAttribute("MEMBER_ID", id);
             forward.setRedirect(true);
             forward.setPath("/privacy/PrivacyList.jsp");
             return forward;
@@ -31,7 +31,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('��й�ȣ�� ��ġ���� �ʽ��ϴ�.')");
+         out.println("alert('비밀번호가 일치하지 않습니다.')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();
@@ -39,7 +39,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('ID�� �������� �ʽ��ϴ�.')");
+         out.println("alert('ID가 존재하지 않습니다.')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();

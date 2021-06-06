@@ -74,6 +74,7 @@ public class privacyDAO {
 			sql = "select MEMBER_PW from member where MEMBER_ID = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
 			if(rs.next()) {
 				String memberpw=rs.getString("MEMBER_PW");
 				if(memberpw.equals(pw)) {
