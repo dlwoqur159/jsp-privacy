@@ -72,6 +72,16 @@ public class PrivacyController extends javax.servlet.http.HttpServlet {
 			}catch(Exception e){
 				e.printStackTrace();
 			}
+		}else if(command.equals("/PrivacyWriteForm.do")){
+			forward=new ActionForward();
+			forward.setPath("/WEB_INF/board/privacy_write.jsp");
+		}else if(command.equals("/PrivacyWritePro.do")){
+			action  = new BoardWriteProAction();
+			try {
+				forward=action.execute(request, response );
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		 // 화占쏙옙占싱듸옙 - isRedirext() 占쏙옙占쏙옙 占쏙옙占쏙옙 sendRedirect 占실댐옙 forward占쏙옙 占쏙옙占�

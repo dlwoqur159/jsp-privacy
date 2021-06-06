@@ -18,7 +18,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>MVC 게시판</title>
+<title>MVC 명함 게시판</title>
 <style type="text/css">
 #registForm {
 	width: 500px;
@@ -60,7 +60,7 @@ table {
 
 	<section id="listForm">
 		<h2>
-			글 목록<a href="boardWriteForm.bo">게시판글쓰기</a>
+			명함 목록 <a href="boardWriteForm.bo">명함추가</a>
 		</h2>
 		<table>
 			<%
@@ -69,10 +69,9 @@ if(articleList != null && listCount > 0){
 
 			<tr id="tr_top">
 				<td>번호</td>
-				<td>제목</td>
-				<td>작성자</td>
-				<td>날짜</td>
-				<td>조회수</td>
+				<td>성함</td>
+				<td>회사명</td>
+				<td>등록날짜</td>
 			</tr>
 
 			<%
@@ -100,14 +99,14 @@ if(articleList != null && listCount > 0){
 		<%if(nowPage<=1){ %>
 		[이전]&nbsp;
 		<%}else{ %>
-		<a href="boardList.bo?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
+		<a href="PrivacyList.bo?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
 		<%} %>
 
 		<%for(int a=startPage;a<=endPage;a++){
 				if(a==nowPage){%>
 		[<%=a %>]
 		<%}else{ %>
-		<a href="boardList.bo?page=<%=a %>">[<%=a %>]
+		<a href="PrivacyList.bo?page=<%=a %>">[<%=a %>]
 		</a>&nbsp;
 		<%} %>
 		<%} %>
