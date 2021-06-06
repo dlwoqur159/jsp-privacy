@@ -139,7 +139,7 @@ event.returnValue=false;
 
    <input type = "text" name="MEMBER_NAME" id = "name" size="20" placeholder="이름" class="txt-box" /> 
    
-   <input type = "text" name="MEMBER_ADD" id = "address" size="20" placeholder="이름" class="txt-box" /> 
+   <input type = "text" name="MEMBER_ADD" id = "address" size="20" placeholder="주소" class="txt-box" /> 
 
    <input type = "text" name="MEMBER_TEL" id="phonenumber" size = "15" placeholder="전화번호" class="txt-box" />
 
