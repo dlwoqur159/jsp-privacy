@@ -14,6 +14,13 @@
 	int endPage=pageInfo.getEndPage();
 %>
 
+<%
+	String id= null;
+if (session.getAttribute("MEMBER_ID")!=null){
+	id=(String)session.getAttribute("MEMBER_ID");
+}
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,6 +66,10 @@ table {
 	<!-- 게시판 리스트 -->
 
 	<section id="listForm">
+	
+		<h2>
+		<%=id %> 로 로그인하셨습니다.
+		</h2>
 		<h2>
 			명함 목록 <a href="boardWriteForm.bo">명함추가</a>
 		</h2>
