@@ -75,7 +75,7 @@ public class PrivacyController extends javax.servlet.http.HttpServlet {
 			}
 		}else if(command.equals("/PrivacyWriteForm.do")){
 			forward=new ActionForward();
-			forward.setPath("/WEB_INF/board/privacy_write.jsp");
+			forward.setPath("/WEB-INF/privacy/privacy_write.jsp");
 		}
 		else if(command.equals("/PrivacyWritePro.do")){
 			action  = new ActionWritePro();

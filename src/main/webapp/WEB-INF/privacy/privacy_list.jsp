@@ -71,7 +71,7 @@ table {
 		<%=id %> 로 로그인하셨습니다.
 		</h2>
 		<h2>
-			명함 목록 <a href="boardWriteForm.bo">명함추가</a>
+			명함 목록 <a href="PrivacyWriteForm.do">명함추가</a>
 		</h2>
 		<table>
 			<%

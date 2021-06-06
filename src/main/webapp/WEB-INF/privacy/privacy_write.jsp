@@ -21,7 +21,6 @@ h2 {
 
 #writebox {
             width: 220px;
-         height:300px;
             margin: auto;
             line-height: 16px;
          border: solid 1px;
@@ -31,8 +30,7 @@ h2 {
 
 .input_style {
    padding:2px;
-   margin-left:20px;
-   margin-top:10px;
+   margin: 10px 20px;
    height:30px; 
    width: 220px
    border-radius: 8%;
@@ -52,7 +50,7 @@ h2 {
 
    <section id="writeForm">
       <h2>명함작성</h2>
-      <form action="boardWritePro.bo" method="post"
+      <form action="PrivacyWriteForm.do" method="post"
          enctype="multipart/form-data" name="boardform">
          <div id = writebox>
                <input placeholder="성함" name="PRIVACY_NAME" id = "PRIVACY_NAME" class="input_style"/>
