@@ -12,6 +12,8 @@ import javax.websocket.Session;
 import vo.privacyBean;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class privacyDAO {
@@ -246,7 +248,7 @@ public class privacyDAO {
 	
 	//글 등록.
 	public int insertArticle(privacyBean article){
-
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int num =0;
@@ -268,7 +270,7 @@ public class privacyDAO {
 					+ "PRIVACY_DATE) values(?,?,?,?,?,?,now())";
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1,  );
+			pstmt.setString(1, article.getMEMBER_ID());
 			pstmt.setInt(2, num);
 			pstmt.setString(3, article.getPRIVACY_NAME());
 			pstmt.setString(4, article.getPRIVACY_TEL());
@@ -287,8 +289,5 @@ public class privacyDAO {
 		return insertCount;
 
 	}
-		
-		
-		
-
+	
 }

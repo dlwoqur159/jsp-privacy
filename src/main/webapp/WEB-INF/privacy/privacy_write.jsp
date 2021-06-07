@@ -59,9 +59,10 @@ h2 {
       <h2>명함작성</h2>
       <form action="PrivacyWritePro.do" method="post" name="boardform">
          <div id = writebox>
+         <input placeholder="id" name="MEMBER_ID" id = "MEMBER_ID" class="input_style"/>
                <input placeholder="성함" name="PRIVACY_NAME" id = "PRIVACY_NAME" class="input_style"/>
                <input id="PRIVACY_TEL" placeholder="연락처" name="PRIVACY_TEL" required="required" class="input_style"/>
-               <input id="PRIVACY_COMPANY_Name" placeholder="회사명" name="PRIVACY_COMPANY_Name" id = "PRIVACY_COMPANY_Name" class="input_style"/>
+               <input id="PRIVACY_Company_Name" placeholder="회사명" name="PRIVACY_Company_Name" id = "PRIVACY_Company_Name" class="input_style"/>
                <input name="PRIVACY_RANK" type="text" placeholder="직위명" id="PRIVACY_RANK"  required="required" class="input_style"/>
 
          </div>
