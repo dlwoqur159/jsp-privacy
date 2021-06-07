@@ -31,7 +31,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('sucess')");
+         out.println("alert('비밀번호가 일치하지 않습니다.')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();
@@ -39,7 +39,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('fail')");
+         out.println("alert('ID가 존재하지 않습니다.')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();

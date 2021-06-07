@@ -93,8 +93,8 @@ public class privacyDAO {
 				while(rs.next()){
 					privacy = new privacyBean();
 					privacy.setPRIVACY_NUM(rs.getInt("PRIVACY_NUM"));
-					privacy.setPRIVACY_NAME(rs.getNString("PRIVACY_NAME"));
-					privacy.setPRIVACY_TEL(rs.getNString("PRIVACY_TEL"));
+					privacy.setPRIVACY_NAME(rs.getString("PRIVACY_NAME"));
+					privacy.setPRIVACY_TEL(rs.getString("PRIVACY_TEL"));
 					privacy.setPRIVACY_Company_Name(rs.getString("PRIVACY_Company_Name"));
 					privacy.setPRIVACY_RANK(rs.getString("PRIVACY_RANK"));
 					privacy.setPRIVACY_DATE(rs.getTimestamp("PRIVACY_DATE"));
