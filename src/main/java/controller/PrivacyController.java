@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import vo.ActionForward;
 import action.Action;
 import action.ActionLogin;
+import action.ActionPrivacyDetail;
 import action.ActionPrivacyList;
 import action.ActionWritePro;
 import action.ActionJoin;
@@ -84,7 +85,18 @@ public class PrivacyController extends javax.servlet.http.HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(command.equals("/PrivacyDetailForm.do")){
+		forward=new ActionForward();
+		forward.setPath("/WEB-INF/privacy/privacy_detail.jsp");
+	}
+	else if(command.equals("/ActionPrivacyDetail.do")){
+		action  = new ActionPrivacyDetail();
+		try {
+			forward=action.execute(req, resp );
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+	}
 		
 		 // 화占쏙옙占싱듸옙 - isRedirext() 占쏙옙占쏙옙 占쏙옙占쏙옙 sendRedirect 占실댐옙 forward占쏙옙 占쏙옙占�
         // sendRedirect : 占쏙옙占싸울옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 request占쏙옙 response占쏙옙체占쏙옙 占쏙옙占쌈곤옙 占쏙옙占쏙옙占싫댐옙.

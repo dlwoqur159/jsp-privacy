@@ -97,7 +97,7 @@ if(articleList != null && listCount > 0){
 					&nbsp; <%} %> ▶ <%}else{ %> ▶ <%} %> 
 					
 					 <a
-					href="boardDetail.bo?board_num=<%=articleList.get(i).getPRIVACY_NUM()%>&page=<%=nowPage%>">
+					href="PrivacyDetailForm.do?privacy_num=<%=articleList.get(i).getPRIVACY_NUM()%>&page=<%=nowPage%>">
 						<%=articleList.get(i).getPRIVACY_NAME()%>
 				</a>
 				</td>
