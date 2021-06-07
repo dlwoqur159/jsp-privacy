@@ -93,8 +93,6 @@ if(articleList != null && listCount > 0){
 				<td><%=articleList.get(i).getPRIVACY_NUM()%></td>
 
 				<td>
-				<%if(articleList.get(i).getPRIVACY_NUM()!=0){ %> <%for(int a=0;a<=articleList.get(i).getPRIVACY_NUM()*2;a++){ %>
-					&nbsp; <%} %> ▶ <%}else{ %> ▶ <%} %> 
 					
 					 <a
 					href="PrivacyDetailForm.do?privacy_num=<%=articleList.get(i).getPRIVACY_NUM()%>&page=<%=nowPage%>">
