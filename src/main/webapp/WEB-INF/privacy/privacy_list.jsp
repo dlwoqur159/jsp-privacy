@@ -100,7 +100,7 @@ if(articleList != null && listCount > 0){
 				</a>
 				</td>
 
-				<td><%=articleList.get(i).getPRIVACY_NAME() %></td>
+				<td><%=articleList.get(i).getPRIVACY_Company_Name() %></td>
 				<td><%=articleList.get(i).getPRIVACY_DATE() %></td>
 			</tr>
 			<%} %>
@@ -111,14 +111,14 @@ if(articleList != null && listCount > 0){
 		<%if(nowPage<=1){ %>
 		[이전]&nbsp;
 		<%}else{ %>
-		<a href="PrivacyList.bo?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
+		<a href="PrivacyList.do?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
 		<%} %>
 
 		<%for(int a=startPage;a<=endPage;a++){
 				if(a==nowPage){%>
 		[<%=a %>]
 		<%}else{ %>
-		<a href="PrivacyList.bo?page=<%=a %>">[<%=a %>]
+		<a href="PrivacyList.do?page=<%=a %>">[<%=a %>]
 		</a>&nbsp;
 		<%} %>
 		<%} %>
@@ -126,7 +126,7 @@ if(articleList != null && listCount > 0){
 		<%if(nowPage>=maxPage){ %>
 		[다음]
 		<%}else{ %>
-		<a href="boardList.bo?page=<%=nowPage+1 %>">[다음]</a>
+		<a href="boardList.do?page=<%=nowPage+1 %>">[다음]</a>
 		<%} %>
 	</section>
 	<%
