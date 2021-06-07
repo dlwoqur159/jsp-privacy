@@ -62,11 +62,11 @@ b{
       <section id="basicInfoArea">
       </section>
       <section id="  ">
-         <b>회사명</b></br>
-         <b><%=article.getPRIVACY_Company_Name() %></b></br>
-         <b>이름</b><b><%=article.getPRIVACY_NAME() %></b></br>
-         <b>직위</b><b><%=article.getPRIVACY_RANK() %></b></br>
-         <b>전화번호</b><b><%=article.getPRIVACY_TEL() %></b></br>
+         회사명</br>
+         <%=article.getPRIVACY_Company_Name() %></br>
+         이름<%=article.getPRIVACY_NAME() %></br>
+         직위<%=article.getPRIVACY_RANK() %></br>
+         전화번호<%=article.getPRIVACY_TEL() %></br>
       </section>
    </section>
    <section id="commandList">

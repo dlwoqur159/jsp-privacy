@@ -17,7 +17,7 @@ import vo.privacyBean;
       ActionForward forward = new ActionForward();
       request.setAttribute("page", page);
          request.setAttribute("article", article);
-         forward.setPath("/privacy/privacy_detail.jsp");
+         forward.setPath("/WEB-INF/privacy/privacy_detail.jsp");
          return forward;
 
     }

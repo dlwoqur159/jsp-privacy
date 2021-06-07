@@ -95,7 +95,7 @@ if(articleList != null && listCount > 0){
 				<td>
 					
 					 <a
-					href="PrivacyDetailForm.do?privacy_num=<%=articleList.get(i).getPRIVACY_NUM()%>&page=<%=nowPage%>">
+					href="ActionPrivacyDetail.do?privacy_num=<%=articleList.get(i).getPRIVACY_NUM()%>&page=<%=nowPage%>">
 						<%=articleList.get(i).getPRIVACY_NAME()%>
 				</a>
 				</td>
