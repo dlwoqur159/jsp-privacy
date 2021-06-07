@@ -18,12 +18,13 @@ public class ActionWritePro implements Action {
 		String id = null;
 		if (session.getAttribute("MEMBER_ID")!=null){
 			id=(String)session.getAttribute("MEMBER_ID");}
+		session.setMaxInactiveInterval(60);
 		
 		ActionForward forward=null;
 		privacyBean privacyBean = null;
 		ServletContext context = request.getServletContext();  		
 		privacyBean = new privacyBean();
-		privacyBean.setMEMBER_ID(request.getParameter("id"));
+		privacyBean.setMEMBER_ID(request.getParameter("MEMBER_ID"));
 		privacyBean.setPRIVACY_NAME(request.getParameter("PRIVACY_NAME"));
 		privacyBean.setPRIVACY_TEL(request.getParameter("PRIVACY_TEL"));
 		privacyBean.setPRIVACY_Company_Name(request.getParameter("PRIVACY_Company_Name"));
@@ -42,7 +43,7 @@ public class ActionWritePro implements Action {
 		else{
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("PrivacyList.bo");
+			forward.setPath("PrivacyList.do");
 		}
 
 		return forward;
