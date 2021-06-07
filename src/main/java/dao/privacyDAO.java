@@ -20,10 +20,22 @@ public class privacyDAO {
 
 	DataSource ds;
 	PreparedStatement pstmt=null;
-	Connection con = null;
+	Connection con;
 	ResultSet rs = null;
 	private static privacyDAO privacyDAO;
 
+	public privacyDAO() {
+
+		try {
+			Context initCtx = new InitialContext();
+			Context envCtx = (Context)initCtx.lookup("java:comp/env");
+			ds=(DataSource)envCtx.lookup("jdbc/MySQLDB");
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	
 	public static privacyDAO getInstance(){
 		if(privacyDAO == null){
 			privacyDAO = new privacyDAO();
@@ -74,7 +86,7 @@ public class privacyDAO {
 			int startrow=(page-1)*10; //읽기 시작할 row 번호..	
 
 			try{
-				pstmt = con.prepareStatement(privacy_list_sql);
+				pstmt = con.prepareStatement(privacy_list_sql);	
 				pstmt.setInt(1, startrow);
 				rs = pstmt.executeQuery();
 
@@ -100,18 +112,8 @@ public class privacyDAO {
 
 		}
 	
-	
-	//DB ����?
-	public privacyDAO() {
 
-		try {
-			Context initCtx = new InitialContext();
-			Context envCtx = (Context)initCtx.lookup("java:comp/env");
-			ds=(DataSource)envCtx.lookup("jdbc/MySQLDB");
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+
 	
 
 	//회占쏙옙占쏙옙占쏙옙 占쏙옙占�
@@ -289,5 +291,59 @@ public class privacyDAO {
 		return insertCount;
 
 	}
+	
+	   public int updateReadCount(int privacy_num) {
+
+		      PreparedStatement pstmt = null;
+		      int updateCount = 0;
+		      String sql="update privacy set PRIVACY_READCOUNT = "+
+		            "PRIVACY_READCOUNT+1 where PRIVACY_NUM = " + privacy_num;
+
+		      try{
+		         pstmt=con.prepareStatement(sql);
+		         updateCount = pstmt.executeUpdate();
+		      }catch(SQLException ex){
+		         System.out.println("setReadCountUpdate      : "+ex);
+		      }
+		      finally{
+		         close(pstmt);
+
+		      }
+
+		      return updateCount;
+		      }
+
+		   public privacyBean selectArticle(int privacy_num) {
+
+		      PreparedStatement pstmt = null;
+		      ResultSet rs = null;
+		      privacyBean privacyBean = null;
+
+		      try{
+		         pstmt = con.prepareStatement(
+		               "select * from board where BOARD_NUM = ?");
+		         pstmt.setInt(1, privacy_num);
+		         rs= pstmt.executeQuery();
+
+		         if(rs.next()){
+		            privacyBean = new privacyBean();
+		            privacyBean.setPRIVACY_NUM(rs.getInt("PRIVACY_NUM"));
+		            privacyBean.setPRIVACY_TEL(rs.getString("PRIVACY_TEL"));
+		            privacyBean.setPRIVACY_NAME(rs.getString("PRIVACY_NAME"));
+		            privacyBean.setPRIVACY_Company_Name(rs.getString("PRIVACY_Company_Name"));
+		            privacyBean.setPRIVACY_RANK(rs.getString("PRIVACY_RANK"));
+		            privacyBean.setPRIVACY_DATE(rs.getTimestamp("PRIVACY_DATE"));
+
+		         }
+		      }catch(Exception ex){
+		         System.out.println("getDetail      : " + ex);
+		      }finally{
+		         close(rs);
+		         close(pstmt);
+		      }
+
+		      return privacyBean;
+
+		   }
 	
 }

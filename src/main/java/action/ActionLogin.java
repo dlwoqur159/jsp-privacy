@@ -31,7 +31,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('鍮꾨�踰덊샇媛� �씪移섑븯吏� �븡�뒿�땲�떎.')");
+         out.println("alert('sucess')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();
@@ -39,7 +39,7 @@ public ActionForward execute(HttpServletRequest req,HttpServletResponse resp) th
          resp.setContentType("text/html;charset=UTF-8");
          PrintWriter out = resp.getWriter();
          out.println("<script>");
-         out.println("alert('ID媛� 議댁옱�븯吏� �븡�뒿�땲�떎.')");
+         out.println("alert('fail')");
          out.println("history.go(-1);");
          out.println("</script>");
          out.close();
